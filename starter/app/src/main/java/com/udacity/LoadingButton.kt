@@ -3,8 +3,11 @@ package com.udacity
 import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
+import androidx.core.content.withStyledAttributes
 import kotlin.properties.Delegates
 
 class LoadingButton @JvmOverloads constructor(
@@ -13,20 +16,28 @@ class LoadingButton @JvmOverloads constructor(
     private var widthSize = 0
     private var heightSize = 0
 
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        style = Paint.Style.FILL
+        textAlign = Paint.Align.CENTER
+        textSize = 60F
+    }
+
     private val valueAnimator = ValueAnimator()
 
     private var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { p, old, new ->
 
     }
 
-
     init {
+        isClickable = true
+//        context.withStyledAttributes(attrs, R.styleable.LoadingButton)
 
     }
 
-
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        paint.color = Color.WHITE
+        canvas.drawText("Download", (widthSize/2).toFloat(), (heightSize/2 + 20).toFloat() , paint)
 
     }
 
