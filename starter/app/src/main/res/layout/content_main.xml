@@ -24,10 +24,14 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_margin="@dimen/default_margin"
-        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:button_text="@string/download"
+        app:text_color="@color/white"
+        app:button_background="@color/colorPrimary"
+        app:bar_background="@color/colorPrimaryDark"
+        app:arc_background="@color/colorAccent" />
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -43,7 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
             android:text="@string/radio_glide_text"
-            android:textSize="@dimen/default_text_size" />
+            android:textSize="@dimen/default_text_size"
+            android:onClick="onRadioButtonClicked" />
 
         <RadioButton
             android:id="@+id/radio_udacity"
@@ -51,7 +56,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
             android:text="@string/radio_udacity_text"
-            android:textSize="@dimen/default_text_size" />
+            android:textSize="@dimen/default_text_size"
+            android:onClick="onRadioButtonClicked" />
 
         <RadioButton
             android:id="@+id/radio_retrofit"
@@ -59,8 +65,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
             android:text="@string/radio_retrofit_text"
-            android:textSize="@dimen/default_text_size" />
+            android:textSize="@dimen/default_text_size"
+            android:onClick="onRadioButtonClicked" />
 
     </RadioGroup>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
