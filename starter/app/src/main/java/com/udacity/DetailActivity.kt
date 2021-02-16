@@ -4,8 +4,6 @@ import android.app.NotificationManager
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -39,9 +37,8 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    fun onFabButtonClicked(view: View) {
+    fun onFabButtonClicked() {
         val intent = Intent(this, MainActivity::class.java)
-//        val intent = Intent(applicationContext, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
